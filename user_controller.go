@@ -2,15 +2,17 @@ package main
 
 import (
 	"fmt"
+	"html/template"
+	"io"
+	"net/http"
+	"strconv"
+
+	"github.com/miniascape/go-mvc/models"
+
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
-	"html/template"
-	"io"
-	"models"
-	"net/http"
-	"strconv"
 )
 
 // gorm Instance
@@ -69,7 +71,7 @@ func main() {
 	e.GET("/api/users/:id", APIUsersGet)
 
 	// start server
-	e.Logger.Fatal(e.Start(":1324"))
+	e.Logger.Fatal(e.Start(":1323"))
 }
 
 func Users(c echo.Context) error {
